@@ -1,0 +1,78 @@
+<div class="alert alert-success alert-dismissible fade show my-0 " role="alert" style="height: 2rem; padding: 0.3rem 1rem; ">
+    <strong>Welcome!</strong>  Get Your Fully Responsive Projects Check it Out.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="padding:0.4rem 1rem;"></button>
+  </div>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    
+    
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://source.unsplash.com/1400x400/?computer" class="d-block w-100"  alt="No Image">
+        </div>
+        <div class="carousel-item">
+          <img src="https://source.unsplash.com/1400x400/?coding" class="d-block w-100"  alt="No Image">
+        </div>
+        <div class="carousel-item">
+          <img src="https://source.unsplash.com/1400x400/? IT developer"  class="d-block w-100"  alt="No Image">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+    <div class="container my-0">
+      <h2 class="cardtitle text-center my-3 py-3"> My Recent Projects</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem;">
+            <img src="/assets/image/portfolio.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Portolio</h5>
+              <p class="card-text">An online portfolio  is an online representation of work you have created, as well as your skills and experiences</p>
+              <a [routerLink]="['user-auth']" class="btn btn-primary">Get Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem;">
+            <img src="/assets/image/Car-Rental-System.jpg"class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Car-Rental-System</h5>
+              <p class="card-text">A car rental,  car hire agency is a company that rents automobiles for short periods of time to the public, generally ranging from a few days.</p>
+              <a [routerLink]="['user-auth']" class="btn btn-primary">Get Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem;">
+            <img src="/assets/image/Waste-Management-System.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">WasteManagementSystem</h5>
+              <p class="card-text">A waste management system is the strategy an organization uses to dispose, reduce, reuse, and prevent waste. </p>
+              <a  [routerLink]="['user-auth']" class="btn btn-primary">Get Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <br>
+<br>
+<br>
+    <app-about></app-about>

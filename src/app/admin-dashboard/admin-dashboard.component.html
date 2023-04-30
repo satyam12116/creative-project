@@ -1,0 +1,100 @@
+<h2>Project Information</h2>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Phone No.</th>
+        <th>College Name</th>
+        <th>Project Documentation</th>
+        <th>Project Language</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData">
+        <td>{{ item._id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.status }}</td>
+        <td>{{ item.phoneNo }}</td>
+        <td>{{ item.clgName }}</td>
+        <td>{{ item.projectDocumentation }}</td>
+        <td>{{ item.projectLanguage }}</td>
+        <td>{{ item.address }}</td>
+        <td>
+            <div style="display:flex;margin-right:20px">
+                <a (click)="acceptHandler(item)" class="btn btn-primary btn-sm">
+                     Accept
+                  </a>
+                  <a (click)="rejectHandler(item)" class="btn btn-primary btn-sm">
+                     Reject
+                  </a>
+            </div>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <h2>Users Information</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone No.</th>
+        <th>Gender</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData1">
+        <td>{{ item._id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phoneNo }}</td>
+        <td>{{ item.gender }}</td>
+        <td>
+          <a href="#" class="btn btn-primary btn-sm">
+            <i class="fa fa-edit"></i> Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <h2>Contact Us Information</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone No.</th>
+        <th>Message</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData2">
+        <td>{{ item._id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phoneNo }}</td>
+        <td>{{ item.message }}</td>
+   
+        <td>
+          <a (click)="deleteHandler(item)" class="btn btn-primary btn-sm">
+            Delete
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  

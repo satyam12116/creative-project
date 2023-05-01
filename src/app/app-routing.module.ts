@@ -8,6 +8,8 @@ import { UserAuthComponent } from './user-auth/user-auth.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { AdminAuthComponent } from './admin-auth/admin-auth.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { RequestStatusComponent } from './request-status/request-status.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path:'user-auth',component:UserAuthComponent},
   {path:'user-dashboard',component:UserDashboardComponent},
   {path:'admin-dashboard',component:AdminDashboardComponent},
-  {path:'admin-auth',component:AdminAuthComponent}
+  {path:'admin-auth',component:AdminAuthComponent},
+  {path:'req',component:RequestStatusComponent},
+  {path:'editprofile',component:EditProfileComponent}
 ];
 
 @NgModule({

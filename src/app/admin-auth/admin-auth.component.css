@@ -25,8 +25,9 @@ form{
 
 
 .login-form{ 
-	width:330px;
+	width:440px;
 	margin:20px;
+	margin-top: 200px;
 }
 
 .sign-up{

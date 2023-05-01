@@ -60,8 +60,8 @@
         <td>{{ item.phoneNo }}</td>
         <td>{{ item.gender }}</td>
         <td>
-          <a href="#" class="btn btn-primary btn-sm">
-            <i class="fa fa-edit"></i> Edit
+          <a (click)="deleteUser(item)" class="btn btn-primary btn-sm">
+             Delete
           </a>
         </td>
       </tr>

@@ -17,29 +17,22 @@ export class ContactmeComponent implements OnInit{
     this.submitForm=this.fb.group({
       name:['',Validators.required],
       email:['',Validators.required],
-      phoneNo:['',Validators.required],
-      clgName:['',Validators.required],
-      address:['',Validators.required],
-      projectDocumentation:['',Validators.required],
-      projectLanguage:['',Validators.required]
+      phone:['',Validators.required],
+      message:['',Validators.required],
+
       
     }) 
   }
 
 submitHandler(){
   let body={
-    status:'no status',
     name:this.submitForm.get('name')?.value,
     email:this.submitForm.get('email')?.value,
-    phoneNo:this.submitForm.get('phoneNo')?.value,
-    clgName:this.submitForm.get('clgName')?.value,
-    address:this.submitForm.get('address')?.value,
-    projectDocumentation:this.submitForm.get('projectDocumentation')?.value,
-    projectLanguagege:this.submitForm.get('projectLanguagege')?.value,
+    phoneNo:this.submitForm.get('phone')?.value,
+    message:this.submitForm.get('message')?.value,
   }
 
 this.http.post('http://localhost:3000/msg',body).subscribe(res=>{
-  this.closeForm=false
 if(res){
   this.closeForm=false
 }

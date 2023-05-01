@@ -34,16 +34,34 @@
         </ul>
         <ul *ngSwitchCase="'user'" class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="user-dashboard" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="about"  href="#">About</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link"  routerLink="getproject"  href="#">Projects</a>
           </li>
-        
           <li class="nav-item">
-            <a class="nav-link"  routerLink="user-dashboard"  href="#">DashBoard</a>
+            <a class="nav-link"  routerLink="contact" href="#">Contact Me</a>
           </li>
           <li class="nav-item">
-            <a (click)="handler()" class="nav-link"  routerLink=" "  href="#">Logout</a>
+            <a class="nav-link"routerLink="req"   href="#">Request Status</a>
           </li>
+          <div ngbDropdown style="margin-left:500px">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>My Account</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <a>
+                <button  routerLink="editprofile"ngbDropdownItem>Edit Profile</button>
+              </a>
+              <a>
+                <button (click)="handler()" routerLink="user-auth" ngbDropdownItem>LogOut</button>
+              </a>
+           
+            </div>
+          </div>
         </ul>
+        
         <ul *ngSwitchCase="'admin'" class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link"  routerLink="admin-Dashboard"  href="#">DashBoard</a>

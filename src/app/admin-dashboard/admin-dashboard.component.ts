@@ -27,6 +27,7 @@ export class AdminDashboardComponent {
   }
   deleteHandler(item:any){
     this.http.delete<any>(`http://localhost:3000/msg/${item._id}`).subscribe(res=>{
+      this.ngOnInit();
       console.log('sucess')
     })
   }
@@ -39,6 +40,12 @@ export class AdminDashboardComponent {
   rejectHandler(item:any){
     item['status']='rejected';
     this.http.put<any>(`http://localhost:3000/project/${item._id}`,item).subscribe(res=>{
+      console.log('sucess')
+    })
+  }
+  deleteUser(item:any){
+    this.http.delete<any>(`http://localhost:3000/users/${item._id}`).subscribe(res=>{
+      this.ngOnInit();
       console.log('sucess')
     })
   }

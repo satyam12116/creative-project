@@ -1,0 +1,33 @@
+<div class="global-container">
+	<div class="card login-form">
+	<div class="card-body">
+		<h3 class="card-title text-center">Edit User Profile </h3>
+		<div class="card-text">
+			<form [formGroup]="editForm" (submit)="editHandler()">
+                <div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" class="form-control form-control-sm"  formControlName="name" id="name" >
+				</div>
+				<div class="form-group">
+					<label for="phoneNo">Phone Number</label>
+					<input type="number" class="form-control form-control-sm"  formControlName="phoneNo" id="phoneNo">
+				</div>
+                	<div class="form-group">
+					<label for="email">Email address</label>
+					<input type="email" class="form-control form-control-sm"  formControlName="email" id="email" >
+				</div>
+                <div class="form-group">
+					<label for="gender">Gender</label>
+					<input type="text" class="form-control form-control-sm"  formControlName="gender" id="gender" >
+				</div>
+                
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input type="password" class="form-control form-control-sm"  formControlName="password" id="password">
+				</div>
+				<button type="submit" class="btn btn-primary btn-block">Sign in</button>
+			</form>
+		</div>
+	</div>
+</div>
+</div>

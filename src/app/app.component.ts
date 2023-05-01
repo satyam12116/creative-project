@@ -18,7 +18,7 @@ export class AppComponent {
     })
   }
   handler(){
-    this.ss.sharedSubject.next({state:'default'})
+    this.ss.sharedSubject.next({state:'default',userId:'',emailId:''})
     this.router.navigate([''])
   }
 }

@@ -14,6 +14,8 @@ import { UserAuthComponent } from './user-auth/user-auth.component';
 import { AdminAuthComponent } from './admin-auth/admin-auth.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { RequestStatusComponent } from './request-status/request-status.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     UserAuthComponent,
     AdminAuthComponent,
     AdminDashboardComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    RequestStatusComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,

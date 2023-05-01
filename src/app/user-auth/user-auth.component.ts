@@ -10,6 +10,8 @@ import { SharedService } from '../service/shared.service';
   styleUrls: ['./user-auth.component.css']
 })
 export class UserAuthComponent {
+  isLogin=true;
+  isSign=false;
   signFlag=false;
   LoginForm!:FormGroup;
   SignUpForm!:FormGroup;
@@ -39,27 +41,34 @@ loginHandler(){
     });
     console.log(user, 'sdjjd');
     if (user) {
-      this.ss.sharedSubject.next({state:'user'})
+      this.ss.sharedSubject.next({state:'user',emailId:user.email,userId:user._id})
       this.router.navigate(['/user-dashboard']);
     } else {
    
     }
   });
 }
-submitHandler(){
-   let body={
-    name:this.SignUpForm.get('name')?.value,
-    email:this.SignUpForm.get('email')?.value,
-    phoneNo:this.SignUpForm.get('phoneNo')?.value,
-    gender:this.SignUpForm.get('gender')?.value,
-    password:this.SignUpForm.get('password')?.value,
-   }
-this.http.post('http://localhost:3000/users',body).subscribe(res=>{
-console.log(res)
-  this.signFlag=true;
+submitHandler(){ 
+  let body={
+  name:this.SignUpForm.get('name')?.value,
+  email:this.SignUpForm.get('email')?.value,
+  phoneNo:this.SignUpForm.get('phoneNo')?.value,
+  gender:this.SignUpForm.get('gender')?.value,
+  password:this.SignUpForm.get('password')?.value,
+ }
 
-})
-
+  if(this.SignUpForm.valid){
+    this.http.post('http://localhost:3000/users',body).subscribe(res=>{
+      console.log(res)
+       this.isLogin=true;
+       this.isSign=false;
+      
+      })
+      
+  }
   
+}
+isSignUp(){
+this.isLogin=true
 }
 }

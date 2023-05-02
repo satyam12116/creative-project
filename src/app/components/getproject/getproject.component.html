@@ -26,85 +26,87 @@
       
 
     </div>
+    <div *ngIf="closeForm">
+      <form [formGroup]="projectForm"(submit)="submitHandler()"  class="needs-validation" novalidate>
+      
+        <div class="mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input type="name" class="form-control" id="name" name="name" formControlName="name" placeholder="Enter Your Full Name"required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+            <div *ngIf="name.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="email" class="form-label">Email ID:</label>
+          <input type="email" class="form-control" id="email" name="email"  formControlName="email" placeholder="Enter Your Email Id" required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+            <div *ngIf="name.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number:</label>
+          <input type="number" class="form-control" id="phone" name="phone"  formControlName="phone"placeholder="Enter Your Phone Number" required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+            <div *ngIf="name.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="college" class="form-label">College Name</label>
+          <input type="college" class="form-control" id="college"  formControlName="clgName"name="college"placeholder="Enter Your College Name"required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+            <div *ngIf="name.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+        <div class="mb-3">
+          <label for="language" class="form-label">Project Name And language</label>
+          <input type="language" class="form-control" id="language"  formControlName="projectLanguage"name="language"placeholder="Enter Your Project language" required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+            <div *ngIf="name.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="documentation" class="form-label">Project Documentation</label>
+          <input type="documentation" class="form-control"  formControlName="projectDocumentation"id="documentation" name="documentation"placeholder=" Want Documentation Yes Or No" required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+          <div *ngIf="projectDocumentation.invalid && (projectDocumentation.dirty || projectDocumentation.touched)" class="invalid-feedback">
+            <div *ngIf="projectDocumentation.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+        
+  
+        <div class="mb-3">
+          <label for="address" class="form-label">Address</label>
+          <input type="address" class="form-control"  formControlName="address" id="address" name="address"placeholder="Enter Your Address" required [class.is-invalid]="address.invalid && (address.dirty || address.touched)">
+          <div *ngIf="address.invalid && (address.dirty || address.touched)" class="invalid-feedback">
+            <div *ngIf="address.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+  
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" >
+          <label class="form-check-label" for="exampleCheck1">Remeber Me</label>
+        </div>
+        <button type="submit" (click)="validate()"class="btn btn-dark">Submit</button>
+      </form>
+    </div>
     
-    <form [formGroup]="projectForm"(submit)="submitHandler()"  class="needs-validation" novalidate>
-      
-      <div class="mb-3">
-        <label for="name" class="form-label">Name:</label>
-        <input type="name" class="form-control" id="name" name="name" formControlName="name" placeholder="Enter Your Full Name"required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
-        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
-          <div *ngIf="name.errors?.['required']">
-            This field is required.
-          </div>
-      </div>
-      </div>
-
-      <div class="mb-3">
-        <label for="email" class="form-label">Email ID:</label>
-        <input type="email" class="form-control" id="email" name="email"  formControlName="email" placeholder="Enter Your Email Id" required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
-        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
-          <div *ngIf="name.errors?.['required']">
-            This field is required.
-          </div>
-      </div>
-      </div>
-
-      <div class="mb-3">
-        <label for="phone" class="form-label">Phone Number:</label>
-        <input type="number" class="form-control" id="phone" name="phone"  formControlName="phoneNo"placeholder="Enter Your Phone Number" required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
-        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
-          <div *ngIf="name.errors?.['required']">
-            This field is required.
-          </div>
-      </div>
-      </div>
-
-      <div class="mb-3">
-        <label for="college" class="form-label">College Name</label>
-        <input type="college" class="form-control" id="college"  formControlName="clgName"name="college"placeholder="Enter Your College Name"required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
-        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
-          <div *ngIf="name.errors?.['required']">
-            This field is required.
-          </div>
-      </div>
-      </div>
-      <div class="mb-3">
-        <label for="language" class="form-label">Project Name And language</label>
-        <input type="language" class="form-control" id="language"  formControlName="projectLanguage"name="language"placeholder="Enter Your Project language" required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
-        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
-          <div *ngIf="name.errors?.['required']">
-            This field is required.
-          </div>
-      </div>
-      </div>
-
-      <div class="mb-3">
-        <label for="documentation" class="form-label">Project Documentation</label>
-        <input type="documentation" class="form-control"  formControlName="projectDocumentation"id="documentation" name="documentation"placeholder=" Want Documentation Yes Or No" required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
-        <div *ngIf="projectDocumentation.invalid && (projectDocumentation.dirty || projectDocumentation.touched)" class="invalid-feedback">
-          <div *ngIf="projectDocumentation.errors?.['required']">
-            This field is required.
-          </div>
-      </div>
-      </div>
-      
-
-      <div class="mb-3">
-        <label for="address" class="form-label">Address</label>
-        <input type="address" class="form-control"  formControlName="address" id="address" name="address"placeholder="Enter Your Address" required [class.is-invalid]="address.invalid && (address.dirty || address.touched)">
-        <div *ngIf="address.invalid && (address.dirty || address.touched)" class="invalid-feedback">
-          <div *ngIf="address.errors?.['required']">
-            This field is required.
-          </div>
-      </div>
-      </div>
-
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" >
-        <label class="form-check-label" for="exampleCheck1">Remeber Me</label>
-      </div>
-      <button type="submit" (click)="validate()"class="btn btn-dark">Submit</button>
-    </form>
   </div>
 
 

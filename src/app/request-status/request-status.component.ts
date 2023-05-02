@@ -17,7 +17,7 @@ ngOnInit(): void {
     if(res){
       this.http.get<any>('http://localhost:3000/project').subscribe(res1=>{
         this.filteredUsers = res1.filter((user:any) => user.email === res.emailId);
-        this.status=this.filteredUsers[0]?.status;
+        // this.status=this.filteredUsers[0]?.status;
       })
     }
   })

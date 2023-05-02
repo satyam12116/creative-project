@@ -44,7 +44,11 @@ editHandler(){
     password:this.editForm.get('password')?.value,
   }
   this.http.put<any>(`http://localhost:3000/users/${this.userid}`,body).subscribe(res=>{
-    this.router.navigate(['user-dashboard']);
+    if(res){
+      this.activeModal.close();
+      this.router.navigate(['/user-dashboard']);
+    }
+   
   })
 }
 }

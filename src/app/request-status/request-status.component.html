@@ -12,15 +12,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr >
-        <td>{{ filteredUsers[0]?.name}}</td>
-        <td>{{ filteredUsers[0]?.email}}</td>
-        <td>{{ filteredUsers[0]?.phoneNo}}</td>
-        <td>{{ filteredUsers[0]?.projectLanguage}}</td>
-        <td>{{ filteredUsers[0]?.projectDocumentation}}</td>
-        <td>{{ filteredUsers[0]?.address}}</td>
-        <td>{{ filteredUsers[0]?.clgName}}</td>
-        <td>{{ status }}</td>
-      </tr>
+        <tr *ngFor="let item of filteredUsers">
+            <td>{{ item.name }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.phoneNo }}</td>
+            <td>{{ item.clgName }}</td>
+            <td>{{ item.projectDocumentation }}</td>
+            <td>{{ item.projectLanguage }}</td>
+            <td>{{ item.address }}</td>
+            <td>{{ item.status }}</td>
+            
+          </tr>
     </tbody>
   </table>

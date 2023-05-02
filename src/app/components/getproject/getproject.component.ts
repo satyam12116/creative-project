@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-getproject',
@@ -10,7 +11,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class GetprojectComponent {
   closeForm=true;
   projectForm!:FormGroup;
-  constructor(private fb:FormBuilder,private http:HttpClient){
+  constructor(private fb:FormBuilder,private http:HttpClient,private router:Router){
 
   }
   ngOnInit(): void {
@@ -40,8 +41,8 @@ submitHandler(){
 
   if(this.projectForm.valid){
     this.http.post('http://localhost:3000/project',body).subscribe(res=>{
-      this.closeForm=false
     if(res){
+      this.router.navigate(['/getproject']);
       this.closeForm=false
     }
     })

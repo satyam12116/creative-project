@@ -37,13 +37,55 @@ submitHandler(){
     projectLanguage:this.projectForm.get('projectLanguage')?.value,
   }
 
-this.http.post('http://localhost:3000/project',body).subscribe(res=>{
-  this.closeForm=false
-if(res){
-  this.closeForm=false
-}
-})
+
+  if(this.projectForm.valid){
+    this.http.post('http://localhost:3000/project',body).subscribe(res=>{
+      this.closeForm=false
+    if(res){
+      this.closeForm=false
+    }
+    })
+  }
+  
 
   
+}
+get name() {
+  return this.projectForm.get('name')!;
+}
+
+get phoneNo() {
+  return this.projectForm.get('phoneNo')!;
+}
+
+get email() {
+  return this.projectForm.get('email')!;
+}
+get gender() {
+  return this.projectForm.get('gender')!;
+}
+
+get password() {
+  return this.projectForm.get('password')!;
+}
+get projectDocumentation() {
+  return this.projectForm.get('projectDocumentation')!;
+}
+get address() {
+  return this.projectForm.get('address')!;
+}
+get clgName() {
+  return this.projectForm.get('clgName')!;
+}
+get projectLanguage() {
+  return this.projectForm.get('projectLanguage')!;
+}
+validate(): void {
+  if (this.projectForm?.invalid) {
+    for (const control of Object.keys(this.projectForm.controls)) {
+      this.projectForm.controls[control].markAsTouched();
+    }
+    return;
+  }
 }
 }

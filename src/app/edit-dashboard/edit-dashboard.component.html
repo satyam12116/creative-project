@@ -1,0 +1,28 @@
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone No.</th>
+        <th>Gender</th>
+        <th>Password</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <td>{{ tableData?._id }}</td>
+        <td>{{ tableData?.name }}</td>
+        <td>{{ tableData?.email }}</td>
+        <td>{{ tableData?.phoneNo }}</td>
+        <td>{{ tableData?.gender }}</td>
+        <td>{{ tableData?.password }}</td>
+        <td>
+            <button type="button" (click)="editUser(tableData)" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                EDIT
+            </button>
+         
+        </td>
+    </tbody>
+  </table>
+

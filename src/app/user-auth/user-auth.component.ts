@@ -31,6 +31,21 @@ export class UserAuthComponent {
       password1:['',Validators.required],
     }) 
 }
+get email1() {
+  return this.LoginForm.get('email1')!;
+}
+
+get password1() {
+  return this.LoginForm.get('password1')!;
+}
+validate1(): void {
+  if (this.LoginForm.invalid) {
+    for (const control of Object.keys(this.LoginForm.controls)) {
+      this.LoginForm.controls[control].markAsTouched();
+    }
+    return;
+  }
+}
 loginHandler(){
   this.http.get<any>('http://localhost:3000/users').subscribe((res: any) => {
     let user = res.find((a: any) => {
@@ -70,5 +85,31 @@ submitHandler(){
 }
 isSignUp(){
 this.isLogin=true
+}
+get name() {
+  return this.SignUpForm.get('name')!;
+}
+
+get phoneNo() {
+  return this.SignUpForm.get('phoneNo')!;
+}
+
+get email() {
+  return this.SignUpForm.get('email')!;
+}
+get gender() {
+  return this.SignUpForm.get('gender')!;
+}
+
+get password() {
+  return this.SignUpForm.get('password')!;
+}
+validate(): void {
+  if (this.SignUpForm.invalid) {
+    for (const control of Object.keys(this.SignUpForm.controls)) {
+      this.SignUpForm.controls[control].markAsTouched();
+    }
+    return;
+  }
 }
 }

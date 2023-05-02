@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -11,7 +13,7 @@ export class AdminDashboardComponent {
   tableData1!: any[];
   tableData2!: any[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private modalService: NgbModal) { }
 
   ngOnInit() {
     // Make API call to retrieve data
@@ -48,5 +50,9 @@ export class AdminDashboardComponent {
       this.ngOnInit();
       console.log('sucess')
     })
+  }
+  editUser(user: any) {
+    const modalRef = this.modalService.open(EditProfileComponent);
+      modalRef.componentInstance.user = user;
   }
 }

@@ -1,9 +1,26 @@
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Project Request Status </h5>
-      <p class="card-text">Name:{{filteredUsers[0]?.name}}</p>
-      <p class="card-text">Email:{{filteredUsers[0]?.email}}</p>
-      <p class="card-text">Phone Number:{{filteredUsers[0]?.phoneNo}}</p>
-      <p class="card-text">Status:{{status}}</p>
-    </div>
-  </div>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Project Name</th>
+        <th>Phone Documentation</th>
+        <th>Address</th>
+        <th>College Name</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <td>{{ filteredUsers[0]?.name}}</td>
+        <td>{{ filteredUsers[0]?.email}}</td>
+        <td>{{ filteredUsers[0]?.phoneNo}}</td>
+        <td>{{ filteredUsers[0]?.projectLanguage}}</td>
+        <td>{{ filteredUsers[0]?.projectDocumentation}}</td>
+        <td>{{ filteredUsers[0]?.address}}</td>
+        <td>{{ filteredUsers[0]?.clgName}}</td>
+        <td>{{ status }}</td>
+      </tr>
+    </tbody>
+  </table>

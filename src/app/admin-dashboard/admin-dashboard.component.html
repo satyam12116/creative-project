@@ -26,8 +26,8 @@
         <td>{{ item.projectLanguage }}</td>
         <td>{{ item.address }}</td>
         <td>
-            <div style="display:flex;margin-right:20px">
-                <a (click)="acceptHandler(item)" class="btn btn-primary btn-sm">
+            <div style="display:flex">
+                <a style="margin-right:10px"(click)="acceptHandler(item)" class="btn btn-primary btn-sm">
                      Accept
                   </a>
                   <a (click)="rejectHandler(item)" class="btn btn-primary btn-sm">
@@ -60,9 +60,12 @@
         <td>{{ item.phoneNo }}</td>
         <td>{{ item.gender }}</td>
         <td>
-          <a (click)="deleteUser(item)" class="btn btn-primary btn-sm">
+          <a style="margin-right:10px" (click)="deleteUser(item)" class="btn btn-primary btn-sm">
              Delete
           </a>
+          <a (click)="editUser(item)" class="btn btn-primary btn-sm">
+            Edit
+         </a>
         </td>
       </tr>
     </tbody>

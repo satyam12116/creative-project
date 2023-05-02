@@ -24,35 +24,56 @@
     <div class="container" *ngIf="closeForm">
     <h2 class="text-center my-2 py-2"> Contact Me</h2>
     
-    <form [formGroup]="submitForm"(submit)="submitHandler()">
+    <form [formGroup]="submitForm"(submit)="submitHandler()" class="needs-validation" novalidate>
      
       <div class="mb-3">
         <label for="name" class="form-label">Name:</label>
-        <input type="name" class="form-control" id="name" name="name" formControlName="name" placeholder="Enter Your Full Name">
+        <input type="name" class="form-control" id="name" name="name" formControlName="name" placeholder="Enter Your Full Name" [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+          <div *ngIf="name.errors?.['required']">
+            This field is required.
+          </div>
+      </div>
+      
       </div>
 
       <div class="mb-3">
         <label for="email" class="form-label">Email ID:</label>
-        <input type="email" class="form-control" id="email" name="email" formControlName="email" placeholder="Enter Your Email Id">
+        <input type="email" class="form-control" id="email" name="email" formControlName="email" placeholder="Enter Your Email Id" [class.is-invalid]="email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
+          <div *ngIf="email.errors?.['required']">
+            This field is required.
+          </div>
+      </div>
       </div>
 
       <div class="mb-3">
         <label for="phone" class="form-label">Phone Number:</label>
-        <input type="number" class="form-control" id="phone" name="phone"formControlName="phone" placeholder="Enter Your Phone NO ">
+        <input type="number" class="form-control" id="phone" name="phone"formControlName="phone" placeholder="Enter Your Phone NO " [class.is-invalid]="phone.invalid && (phone.dirty || phone.touched)">
+        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="invalid-feedback">
+          <div *ngIf="phone.errors?.['required']">
+            This field is required.
+          </div>
+      </div>
       </div>
 
       
 
       <div class="mb-3">
         <label for="message" class="form-label">Message</label>
-        <input type="text" class="form-control" id="message" formControlName="message" name="message"placeholder="Enter Your Massage">
+        <input type="text" class="form-control" id="message" formControlName="message" name="message"placeholder="Enter Your Massage" [class.is-invalid]="message.invalid && (message.dirty || message.touched)">
+        <div *ngIf="message.invalid && (message.dirty || message.touched)" class="invalid-feedback">
+          <div *ngIf="message.errors?.['required']">
+            This field is required.
+          </div>
+      </div>
       </div>
       
       <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1" >
         <label class="form-check-label" for="exampleCheck1">Remeber Me</label>
       </div>
-      <button type="submit" class="btn btn-dark">Submit</button>
+      <button (click)="validate()" type="submit" class="btn btn-dark">Submit</button>
     </form>
   </div>
 

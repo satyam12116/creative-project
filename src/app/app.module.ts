@@ -16,6 +16,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { RequestStatusComponent } from './request-status/request-status.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { EditDashboardComponent } from './edit-dashboard/edit-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     AdminDashboardComponent,
     UserDashboardComponent,
     RequestStatusComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    EditDashboardComponent
   ],
   imports: [
     BrowserModule,
